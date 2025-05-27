@@ -3,6 +3,7 @@ from typing import List
 from fastapi import FastAPI
 from ai_agent import get_response_from_ai_agent
 import uvicorn
+from fastapi.middleware.cors import CORSMiddleware
  
 class RequestState(BaseModel):
     model_name: str
@@ -15,6 +16,14 @@ class RequestState(BaseModel):
 ALLOWED_MODEL_PROVIDERS = ["llama-3.3-70b-versatile", "gemini-2.0-flash", "gpt-4o-mini"]
 
 app = FastAPI(title="Langgraph AI Agent")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/chat")
 def chat_endpoint(request: RequestState):

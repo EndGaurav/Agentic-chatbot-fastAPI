@@ -18,7 +18,7 @@ web_search = st.checkbox("Allow web search")
 
 user_query = st.text_area("Define your query: ", height=100, placeholder="Type your query here...")
 
-API_URL = "http://127.0.0.1:3000/chat"
+API_URL = "https://chat-with-agent.onrender.com/chat"
 
 if st.button("Ask Agent"):
     if user_query.strip():
