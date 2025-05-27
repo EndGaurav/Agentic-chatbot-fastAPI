@@ -12,7 +12,7 @@ provider = st.radio("Select an provider:", ["Gemini", "Groq"])
 if provider == "Groq":
     selected_model = st.selectbox("Select Groq model: ", ["llama-3.3-70b-versatile", "mixtral-8x7b-32768"])
 elif provider == "Gemini":
-    selected_model = st.selectbox("Select Gemini model: ", ["Gemini 2.5 Flash Preview 05-20", "gemini-2.0-flash"])
+    selected_model = st.selectbox("Select Gemini model: ", ["gemini-2.0-flash", "Gemini 2.5 Flash Preview 05-20"])
 
 web_search = st.checkbox("Allow web search")
 
